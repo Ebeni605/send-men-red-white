@@ -2,41 +2,68 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+/* SEND MEN WORLD WIDE MINISTRY Design System
+Professional red and white theme with modern typography and animations
 All colors MUST be HSL.
 */
 
 @layer base {
   :root {
+    /* Core Brand Colors - Red and White Ministry Theme */
     --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-
+    --foreground: 0 0% 15%;
+    
+    /* Ministry Red - Professional and Warm */
+    --primary: 0 85% 55%;
+    --primary-foreground: 0 0% 100%;
+    --primary-light: 0 85% 65%;
+    --primary-dark: 0 85% 45%;
+    
+    /* Elegant White and Light Grays */
+    --secondary: 0 0% 98%;
+    --secondary-foreground: 0 0% 20%;
+    
+    /* Cards and Surfaces */
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-
+    --card-foreground: 0 0% 15%;
+    
+    /* Interactive Elements */
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
-
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
-
-    --radius: 0.5rem;
+    --popover-foreground: 0 0% 15%;
+    
+    /* Subtle Elements */
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 45%;
+    
+    /* Accent for Highlights */
+    --accent: 0 0% 95%;
+    --accent-foreground: 0 85% 55%;
+    
+    /* System Colors */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    
+    /* Borders and Inputs */
+    --border: 0 0% 90%;
+    --input: 0 0% 96%;
+    --ring: 0 85% 55%;
+    
+    /* Border Radius */
+    --radius: 0.75rem;
+    
+    /* Ministry Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(0 85% 55%), hsl(0 85% 65%));
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%), hsl(0 0% 98%));
+    --gradient-section: linear-gradient(180deg, hsl(0 0% 98%), hsl(0 0% 100%));
+    
+    /* Shadows with Red Tint */
+    --shadow-ministry: 0 10px 40px hsl(0 85% 55% / 0.15);
+    --shadow-card: 0 4px 20px hsl(0 0% 0% / 0.08);
+    --shadow-elegant: 0 8px 30px hsl(0 85% 55% / 0.12);
+    
+    /* Animation Transitions */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
     --sidebar-background: 0 0% 98%;
 
@@ -55,42 +82,140 @@ All colors MUST be HSL.
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
-  .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+  }
+}
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+/* Custom Ministry Components and Utilities */
+@layer components {
+  /* Hero Section Styling */
+  .hero-section {
+    @apply relative overflow-hidden;
+    background: var(--gradient-hero);
+    min-height: 70vh;
+  }
+  
+  .hero-content {
+    @apply relative z-10 text-center text-white;
+  }
+  
+  .hero-title {
+    @apply text-5xl md:text-7xl font-bold leading-tight;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  }
+  
+  .hero-subtitle {
+    @apply text-xl md:text-2xl font-light opacity-95;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Ministry Cards */
+  .ministry-card {
+    @apply bg-card border border-border rounded-lg;
+    background: var(--gradient-card);
+    box-shadow: var(--shadow-card);
+    transition: var(--transition-smooth);
+  }
+  
+  .ministry-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-elegant);
+  }
+  
+  /* Section Styling */
+  .ministry-section {
+    @apply py-16 md:py-24;
+    background: var(--gradient-section);
+  }
+  
+  /* Navigation Enhancement */
+  .nav-link {
+    @apply relative font-medium transition-colors;
+  }
+  
+  .nav-link::after {
+    @apply absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300;
+    content: '';
+  }
+  
+  .nav-link:hover::after,
+  .nav-link.active::after {
+    @apply w-full;
+  }
+  
+  /* Button Variants */
+  .btn-ministry {
+    @apply bg-primary text-primary-foreground font-semibold px-8 py-4 rounded-lg;
+    box-shadow: var(--shadow-ministry);
+    transition: var(--transition-bounce);
+  }
+  
+  .btn-ministry:hover {
+    @apply bg-primary-dark;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-elegant);
+  }
+  
+  .btn-outline-ministry {
+    @apply border-2 border-primary text-primary bg-transparent font-semibold px-8 py-4 rounded-lg;
+    transition: var(--transition-smooth);
+  }
+  
+  .btn-outline-ministry:hover {
+    @apply bg-primary text-primary-foreground;
+  }
+}
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+/* Animation Keyframes */
+@layer utilities {
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes slideInRight {
+    from {
+      opacity: 0;
+      transform: translateX(50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  @keyframes pulseGlow {
+    0%, 100% {
+      box-shadow: 0 0 0 0 hsl(0 85% 55% / 0.4);
+    }
+    50% {
+      box-shadow: 0 0 0 20px hsl(0 85% 55% / 0);
+    }
+  }
+  
+  .animate-fadeInUp {
+    animation: fadeInUp 0.6s ease-out;
+  }
+  
+  .animate-slideInRight {
+    animation: slideInRight 0.8s ease-out;
+  }
+  
+  .animate-pulseGlow {
+    animation: pulseGlow 2s infinite;
+  }
+  
+  /* Utility classes */
+  .text-gradient {
+    background: var(--gradient-hero);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
 }
 
