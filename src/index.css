@@ -9,57 +9,60 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Core Brand Colors - Red and White Ministry Theme */
+    /* Core Brand Colors - Gold and Purple Ministry Theme from Logo */
     --background: 0 0% 100%;
-    --foreground: 0 0% 15%;
+    --foreground: 270 15% 20%;
     
-    /* Ministry Red - Professional and Warm */
-    --primary: 0 85% 55%;
-    --primary-foreground: 0 0% 100%;
-    --primary-light: 0 85% 65%;
-    --primary-dark: 0 85% 45%;
+    /* Ministry Gold - From Logo */
+    --primary: 45 95% 65%;
+    --primary-foreground: 270 15% 20%;
+    --primary-light: 45 95% 75%;
+    --primary-dark: 45 85% 55%;
     
-    /* Elegant White and Light Grays */
-    --secondary: 0 0% 98%;
-    --secondary-foreground: 0 0% 20%;
+    /* Ministry Purple - From Logo */
+    --secondary: 270 25% 35%;
+    --secondary-foreground: 45 95% 65%;
     
     /* Cards and Surfaces */
     --card: 0 0% 100%;
-    --card-foreground: 0 0% 15%;
+    --card-foreground: 270 15% 20%;
     
     /* Interactive Elements */
     --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 15%;
+    --popover-foreground: 270 15% 20%;
     
     /* Subtle Elements */
-    --muted: 0 0% 96%;
-    --muted-foreground: 0 0% 45%;
+    --muted: 45 20% 95%;
+    --muted-foreground: 270 10% 45%;
     
     /* Accent for Highlights */
-    --accent: 0 0% 95%;
-    --accent-foreground: 0 85% 55%;
+    --accent: 45 30% 92%;
+    --accent-foreground: 270 25% 35%;
     
     /* System Colors */
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
     
     /* Borders and Inputs */
-    --border: 0 0% 90%;
-    --input: 0 0% 96%;
-    --ring: 0 85% 55%;
+    --border: 45 15% 88%;
+    --input: 45 20% 95%;
+    --ring: 45 95% 65%;
     
     /* Border Radius */
     --radius: 0.75rem;
     
-    /* Ministry Gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(0 85% 55%), hsl(0 85% 65%));
-    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%), hsl(0 0% 98%));
-    --gradient-section: linear-gradient(180deg, hsl(0 0% 98%), hsl(0 0% 100%));
+    /* Ministry Gradients - Gold and Purple */
+    --gradient-hero: linear-gradient(135deg, hsl(270 25% 35%), hsl(45 95% 65%));
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%), hsl(45 20% 98%));
+    --gradient-section: linear-gradient(180deg, hsl(45 20% 98%), hsl(0 0% 100%));
+    --gradient-gold: linear-gradient(135deg, hsl(45 95% 65%), hsl(45 85% 55%));
+    --gradient-purple: linear-gradient(135deg, hsl(270 25% 35%), hsl(270 30% 25%));
     
-    /* Shadows with Red Tint */
-    --shadow-ministry: 0 10px 40px hsl(0 85% 55% / 0.15);
+    /* Shadows with Gold Tint */
+    --shadow-ministry: 0 10px 40px hsl(45 95% 65% / 0.15);
     --shadow-card: 0 4px 20px hsl(0 0% 0% / 0.08);
-    --shadow-elegant: 0 8px 30px hsl(0 85% 55% / 0.12);
+    --shadow-elegant: 0 8px 30px hsl(45 95% 65% / 0.12);
+    --shadow-purple: 0 8px 30px hsl(270 25% 35% / 0.15);
     
     /* Animation Transitions */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -143,6 +146,7 @@ All colors MUST be HSL.
   /* Button Variants */
   .btn-ministry {
     @apply bg-primary text-primary-foreground font-semibold px-8 py-4 rounded-lg;
+    background: var(--gradient-gold);
     box-shadow: var(--shadow-ministry);
     transition: var(--transition-bounce);
   }
@@ -160,6 +164,19 @@ All colors MUST be HSL.
   
   .btn-outline-ministry:hover {
     @apply bg-primary text-primary-foreground;
+    background: var(--gradient-gold);
+  }
+  
+  .btn-secondary {
+    @apply bg-secondary text-secondary-foreground font-semibold px-8 py-4 rounded-lg;
+    background: var(--gradient-purple);
+    box-shadow: var(--shadow-purple);
+    transition: var(--transition-bounce);
+  }
+  
+  .btn-secondary:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-elegant);
   }
 }
 

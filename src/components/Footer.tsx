@@ -35,19 +35,24 @@ const Footer = () => {
           {/* Ministry Info */}
           <div className="space-y-4">
             <div className="flex items-center space-x-3">
-              <div className="w-12 h-12 bg-gradient-hero rounded-full flex items-center justify-center text-white font-bold text-xl">
-                SM
+              <div className="w-16 h-16 relative">
+                <img 
+                  src="/lovable-uploads/baeb0440-8c5a-4d44-a11b-8a2550e7a0fd.png" 
+                  alt="Send Me Worldwide Gospel Ministry Logo" 
+                  className="w-full h-full object-contain rounded-full"
+                />
               </div>
               <div>
                 <h3 className="text-xl font-heading font-bold text-background">
-                  SEND MEN WORLD WIDE
+                  SEND ME WORLDWIDE
                 </h3>
-                <p className="text-sm text-background/80">MINISTRY</p>
+                <p className="text-sm text-background/80">GOSPEL MINISTRY</p>
               </div>
             </div>
             <p className="text-background/80 leading-relaxed">
               Dedicated to spreading the Gospel of Jesus Christ worldwide through powerful 
-              preaching, teaching, and outreach programs. Join us in our mission to reach every nation.
+              preaching, teaching, and outreach programs. Isaiah 6:8 - Mark 16:15. 
+              Join us in our mission to reach every nation.
             </p>
             <div className="flex space-x-4">
               {socialLinks.map((social) => (
@@ -127,10 +132,10 @@ const Footer = () => {
               <div className="flex items-center space-x-3">
                 <Mail className="w-5 h-5 text-primary flex-shrink-0" />
                 <a 
-                  href="mailto:info@sendmenworldwide.org" 
+                  href="mailto:info@sendmeworldwide.org" 
                   className="text-background/80 hover:text-primary transition-colors"
                 >
-                  info@sendmenworldwide.org
+                  info@sendmeworldwide.org
                 </a>
               </div>
             </div>
@@ -141,7 +146,7 @@ const Footer = () => {
         <div className="border-t border-background/20 mt-12 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <p className="text-background/60 text-sm">
-              © {currentYear} Send Men World Wide Ministry. All rights reserved.
+              © {currentYear} Send Me Worldwide Gospel Ministry. All rights reserved.
             </p>
             <div className="flex space-x-6 text-sm">
               <Link to="/privacy" className="text-background/60 hover:text-primary transition-colors">

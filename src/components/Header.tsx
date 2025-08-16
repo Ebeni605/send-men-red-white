@@ -47,14 +47,18 @@ const Header = () => {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-3">
-            <div className="w-12 h-12 bg-gradient-hero rounded-full flex items-center justify-center text-white font-bold text-xl">
-              SM
+            <div className="w-16 h-16 relative">
+              <img 
+                src="/lovable-uploads/baeb0440-8c5a-4d44-a11b-8a2550e7a0fd.png" 
+                alt="Send Me Worldwide Gospel Ministry Logo" 
+                className="w-full h-full object-contain rounded-full"
+              />
             </div>
             <div className="hidden md:block">
               <h1 className="text-xl font-heading font-bold text-foreground">
-                SEND MEN WORLD WIDE
+                SEND ME WORLDWIDE
               </h1>
-              <p className="text-sm text-muted-foreground -mt-1">MINISTRY</p>
+              <p className="text-sm text-muted-foreground -mt-1">GOSPEL MINISTRY</p>
             </div>
           </Link>
 

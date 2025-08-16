@@ -19,9 +19,12 @@ const HeroSection = () => {
       <div className="hero-content max-w-6xl mx-auto px-4 py-20">
         <div className="animate-fadeInUp">
           <h1 className="hero-title font-heading mb-6">
-            SEND MEN WORLD WIDE
+            SEND ME WORLDWIDE
             <span className="block text-4xl md:text-5xl font-light opacity-90">
-              MINISTRY
+              GOSPEL MINISTRY
+            </span>
+            <span className="block text-2xl md:text-3xl font-light opacity-80 mt-4">
+              Isaiah 6:8 • Mark 16:15
             </span>
           </h1>
           
